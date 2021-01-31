@@ -8,7 +8,7 @@ class RolesUser extends Model
 {
     public function user()
     {
-        return $this->hasMany('App\Models\User');
+        return $this->hasMany('App\User');
     }
 
     public function role()

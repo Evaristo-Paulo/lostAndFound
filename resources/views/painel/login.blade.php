@@ -34,7 +34,7 @@
                     <form action="{{ route('postLogin') }}" method="post">
                         {{ csrf_field() }}
 
-                        <h1>Entre na plataforma</h1>
+                        <h1>Faça o seu login</h1>
                         <div>
                             <input type="email" class="form-control" placeholder="Email" name="email" required="" value="admin@gmail.com">
                         </div>
@@ -54,8 +54,7 @@
                             <div>
                                 <p>&copy; <script>
                                         document.write(new Date().getFullYear());
-
-                                    </script> <strong><span>Devolve-ME!</span></strong> - Todos os direitos reservados
+                                    </script> - Todos os direitos reservados
                                 </p>
                             </div>
                         </div>

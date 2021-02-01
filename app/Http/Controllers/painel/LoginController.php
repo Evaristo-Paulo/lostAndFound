@@ -27,7 +27,9 @@ class LoginController extends Controller
 
     public function painel()
     {
-        return view('painel.dashboard');
+        $user = auth()->user();
+        $user_name = Pessoa::where('id', $user->id)->first()->nome;
+        return view('painel.dashboard', compact('user_name'));
     }
 
     public function postLogin(Request $request)
@@ -74,7 +76,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('sitema.login');
+        return redirect()->route('painel.login');
     }
 
 

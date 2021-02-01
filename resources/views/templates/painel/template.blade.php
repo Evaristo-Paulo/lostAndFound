@@ -37,13 +37,14 @@
     <div id="preloader">
         <div class="loader"></div>
     </div>
+    
     <!-- preloader area end -->
     <div class="container body">
         <div class="main_container">
             <div class="col-md-3 left_col menu_fixed">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Devolve-ME!</span></a>
+                        <a href="index.html" style="font-size: 1.3rem; " class="site_title"><i class="fa fa-paw"></i> <span id="main-title">Lost and Found</span></a>
                     </div>
 
                     <div class="clearfix"></div>

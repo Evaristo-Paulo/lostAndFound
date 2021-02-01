@@ -1,0 +1,40 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 01/02/2021 15:16
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+
+.flaticon-lost-items:before { content: "\f100"; }
+.flaticon-lost-items-1:before { content: "\f101"; }
+.flaticon-multiple-users-silhouette:before { content: "\f102"; }
+.flaticon-group:before { content: "\f103"; }
+.flaticon-suitcase:before { content: "\f104"; }
+.flaticon-purse:before { content: "\f105"; }
+.flaticon-wallet:before { content: "\f106"; }
+.flaticon-handshake:before { content: "\f107"; }

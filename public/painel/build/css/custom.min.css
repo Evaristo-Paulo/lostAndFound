@@ -3262,7 +3262,7 @@ h4.graph_title {
 .tile-stats .icon {
     width: 20px;
     height: 20px;
-    color: #BAB8B8;
+    color: #fff;
     position: absolute;
     right: 53px;
     top: 22px;
@@ -3277,11 +3277,6 @@ h4.graph_title {
     padding: 0
 }
 
-.tile-stats .count {
-    font-size: 38px;
-    font-weight: bold;
-    line-height: 1.65857143
-}
 
 .tile-stats .count,
 .tile-stats h3,
@@ -3290,11 +3285,21 @@ h4.graph_title {
     margin: 0;
     margin-left: 10px;
     z-index: 5;
-    padding: 0
+    padding: 0;
+    color: #fff;
 }
 
+.tile-stats .count {
+    font-size: 38px;
+    font-weight: bold;
+    line-height: 1.65857143;
+    color: rgba(255, 255, 255, 0.829)
+
+}
+
+
 .tile-stats h3 {
-	color: #BAB8B8;
+	color: #fff;
 	font-size: 1.2rem;
 	margin-top: 5px;
 	margin-right: 5px;
@@ -3303,7 +3308,16 @@ h4.graph_title {
 .tile-stats p {
     margin-top: 5px;
 	font-size: 12px;
-	margin-bottom: 5px;
+    margin-bottom: 5px;
+    color: #fff
+}
+
+
+.tile-stats p a{
+    color: rgba(255, 255, 255, 0.829)
+}
+.tile-stats p a:hover{
+    color: rgba(255, 255, 255, 0.685)
 }
 
 .tile-stats>.dash-box-footer {
@@ -3312,7 +3326,6 @@ h4.graph_title {
     margin-top: 5px;
     padding: 3px 0;
     color: #fff;
-    color: rgba(255, 255, 255, 0.8);
     display: block;
     z-index: 10;
     background: rgba(0, 0, 0, 0.1);

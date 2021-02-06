@@ -15,3 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'site\SiteController@index')->name('site.index');
+Route::get('/registo-de-objecto', 'site\SiteController@form_objecto')->name('site.objecto.form');
+Route::post('/registo-de-objecto', 'site\ObjectoController@store')->name('site.objecto.store');
+Route::get('/lista-de-objecto', 'site\SiteController@listas_objectos')->name('site.objecto.lista');

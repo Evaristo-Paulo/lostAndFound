@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard','painel\LoginController@painel')->name('painel');
+Route::get('/painel/Inicio','painel\LoginController@painel')->name('painel');
+
 
 Route::get('/painel/login', 'painel\LoginController@login_form')->name('painel.login');
 Route::post('/postLogin','painel\LoginController@postLogin')->name('postLogin');
@@ -37,3 +38,26 @@ Route::post('/painel/usuarios/{id}/actualizacao','painel\UserController@update')
 Route::get('/painel/usuarios/{id}/activacao','painel\UserController@activar')->name('user.acivar');
 Route::get('/painel/usuarios/{id}/reset','painel\UserController@reset')->name('user.reset');
 
+/*====================OBJECTO=============================*/
+
+Route::get('/painel/objecto/registo','painel\ObjectoController@create')->name('object.create');
+
+/*====================Estatistica=============================*/
+Route::get('/painel/estatistica/entregues','painel\EstatisticaController@estatisticaEntregues')->name('estatistica.estatisticaEntregues');
+
+Route::get('/painel/estatistica/achados','painel\EstatisticaController@estatisticaAchados')->name('estatistica.estatisticaAchados');
+
+Route::get('/painel/estatistica/roubados','painel\EstatisticaController@estatisticaRoubados')->name('estatistica.estatisticaRoubados');
+
+Route::get('/painel/estatistica/perdidos','painel\EstatisticaController@estatisticaPerdidos')->name('estatistica.estatisticaPerdidos');
+
+
+/*====================Relatorio=============================*/
+
+Route::get('/painel/relatorio/entregues','painel\RelatorioController@relatorioEntregues')->name('relatorio.relatorioEntregues');
+
+Route::get('/painel/relatorio/achados','painel\RelatorioController@relatorioAchados')->name('relatorio.relatorioAchados');
+
+Route::get('/painel/relatorio/roubados','painel\RelatorioController@relatorioRoubados')->name('relatorio.relatorioRoubados');
+
+Route::get('/painel/relatorio/perdidos','painel\relatorioController@relatorioPerdidos')->name('relatorio.relatorioPerdidos');

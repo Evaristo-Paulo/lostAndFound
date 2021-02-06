@@ -44,7 +44,7 @@
             <div class="col-md-3 left_col menu_fixed">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" style="font-size: 1.3rem; " class="site_title"><i class="fa fa-paw"></i> <span id="main-title">Lost and Found</span></a>
+                        <a href="{{route('painel')}}" style="font-size: 1.3rem; " class="site_title"><i class="fa fa-paw"></i> <span id="main-title">Lost and Found</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -95,7 +95,7 @@
             <!-- page content -->
             @yield('main-content')
             <!-- /page content -->
-
+                   
             <!-- footer content -->
             @include('painel.partials.footer')
             <!-- /footer content -->

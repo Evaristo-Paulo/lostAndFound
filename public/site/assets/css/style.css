@@ -1485,3 +1485,10 @@ section {
   }
 
 }
+
+
+#notification-warning {
+    background-color: #F3BB45;
+    padding: 10px 20px;
+    color: #fff;
+}

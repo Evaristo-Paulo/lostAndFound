@@ -40,7 +40,16 @@ class ObjectoController extends Controller
     public function store(Request $request)
     {
 
+        if ( $request->documento != null){
+            $hasObjecto = Objecto::where('num_documento',$request->documento )->first();
+            if ( $hasObjecto){
+                $request->session()->flash('warning', 'Foi encontrada uma correspondência deste objecto!');
+                return redirect()->route('site.objecto.form');
+            }
+        }
         $nameFile = null;
+        dd( $request->all());            
+        
         if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
             $name = uniqid(date('HisYmd'));
             $extension = $request->foto->extension();

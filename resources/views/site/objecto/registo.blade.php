@@ -18,16 +18,23 @@ Registo de objecto
                     <li>Registo de Objecto</li>
                 </ol>
             </div>
-
         </div>
     </section><!-- End Breadcrumbs -->
 
     <section class="inner-page">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-12 col-sm-12 ">
                     <div class="x_panel">
+                        @if(session('warning'))
+                            <div class="page-header" id="notification-warning">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <i class="ti-check"></i> {{ session('warning') }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="x_content">
                             <div class="payment">
                                 <section class="wizard-section">
@@ -92,7 +99,7 @@ Registo de objecto
                                                             <input type="text" class="form-control wizard-required"
                                                                 id="fname2" name="documento">
                                                             <label for="fname2" class="wizard-form-text-label">Nº
-                                                                documento *</label>
+                                                                documento </label>
                                                             <div class="wizard-form-error"></div>
                                                         </div>
                                                         <div class="form-group">
@@ -104,7 +111,7 @@ Registo de objecto
                                                         </div>
                                                         <div class="form-group">
                                                             <input type="file" class="form-control wizard-required"
-                                                                name="foto" id="honame">
+                                                                name="foto" id="honame" multiple>
                                                         </div>
                                                         <div class="form-group clearfix">
                                                             <a href="javascript:;"
@@ -145,14 +152,19 @@ Registo de objecto
                                                             <p class="payment-type">Tipo de perda</p>
                                                             <div class="form-group">
                                                                 <div class="wizard-form-radio">
-                                                                    <input name="estado" id="mastercard" value="perdido"
-                                                                        type="radio" checked>
-                                                                    <label for="mastercard">Perdido</label>
+                                                                    <input name="estado" id="roubado" value="roubado"
+                                                                        type="radio">
+                                                                    <label for="roubado">Roubado</label>
                                                                 </div>
                                                                 <div class="wizard-form-radio">
-                                                                    <input name="estado" id="visacard" value="roubado"
+                                                                    <input name="estado" id="perdido" value="perdido"
+                                                                        type="radio" checked>
+                                                                    <label for="perdido">Perdido</label>
+                                                                </div>
+                                                                <div class="wizard-form-radio">
+                                                                    <input name="estado" id="achado" value="achado"
                                                                         type="radio">
-                                                                    <label for="visacard">Roubado</label>
+                                                                    <label for="achado">Achado</label>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -629,6 +641,11 @@ Registo de objecto
         });
     });
 
+</script>
+<script>
+    setTimeout(() => {
+        document.querySelector('#notification-warning').style.display = 'none'
+    }, 3000);
 </script>
 
 @endsection

@@ -51,7 +51,7 @@ Registo de objecto
 
                                                     <div class="form-wizard-header">
                                                         <p>Preenche todos os campos do formulário</p>
-                                                        <ul class="list-unstyled form-wizard-steps clearfix">
+                                                        <ul class="list-unstyled form-wizard-steps clearfix" style="display: flex; justify-content: center">
                                                             <li class="active"><span>1</span></li>
                                                             <li><span>2</span></li>
                                                             <li><span>3</span></li>
@@ -81,11 +81,11 @@ Registo de objecto
                                                     <fieldset class="wizard-fieldset">
                                                         <h5>Dados do objecto</h5>
                                                         <div class="row">
-                                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                            <div class="col-lg-12 col-md-6 col-sm-6">
                                                                 <div class="form-group">
                                                                     <select class="form-control" name="tipo">
                                                                         <option value="" disabled selected>Selecionar
-                                                                            tipo
+                                                                            categoria
                                                                         </option>
                                                                             @foreach( $tipos_objectos as $value )
                                                                             <option value="{{ $value->id }}">
@@ -125,48 +125,45 @@ Registo de objecto
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6">
                                                                 <div class="form-group">
-                                                                    <input type="text"
-                                                                        class="form-control wizard-required"
-                                                                        name="bairro" id="cardname">
-                                                                    <label for="cardname"
-                                                                        class="wizard-form-text-label">Bairro</label>
-                                                                    <div class="wizard-form-error"></div>
+                                                                    <select class="form-control" name="provincia" id="provincia">
+                                                                        <option value="" disabled selected>Selecionar
+                                                                            provincia
+                                                                        </option>
+                                                                        @foreach( $provincias as $value )
+                                                                            <option value="{{ $value->id }}">
+                                                                                {{ $value->nome }}</option>
+                                                                        @endforeach
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-6 col-md-6 col-sm-6">
-
                                                                 <div class="form-group">
-                                                                    <select class="form-control" name="municipio">
-                                                                        <option value="" disabled selected>Selecionar
-                                                                            município
+                                                                    <select class="form-control" name="municipio" id="municipio">
+                                                                        <option value="" disabled selected>Aguardando ...
                                                                         </option>
-                                                                        @foreach( $municipios as $value )
-                                                                        <option value="{{ $value->id }}">
-                                                                                {{ $value->nome }}</option>
-                                                                            @endforeach
-                                                                        </select>
+                                                                    </select>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <p class="payment-type">Tipo de perda</p>
-                                                            <div class="form-group">
-                                                                <div class="wizard-form-radio">
-                                                                    <input name="estado" id="roubado" value="roubado"
-                                                                        type="radio">
-                                                                    <label for="roubado">Roubado</label>
-                                                                </div>
-                                                                <div class="wizard-form-radio">
-                                                                    <input name="estado" id="perdido" value="perdido"
-                                                                        type="radio" checked>
-                                                                    <label for="perdido">Perdido</label>
-                                                                </div>
-                                                                <div class="wizard-form-radio">
-                                                                    <input name="estado" id="achado" value="achado"
-                                                                        type="radio">
-                                                                    <label for="achado">Achado</label>
-                                                                </div>
-                                                            </div>
+                                                            <input type="text"
+                                                                class="form-control wizard-required"
+                                                                name="bairro" id="cardname">
+                                                            <label for="cardname"
+                                                                class="wizard-form-text-label">Bairro</label>
+                                                            <div class="wizard-form-error"></div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <select class="form-control" name="estado">
+                                                                <option value="#" selected disabled>Selecionar condição do objecto</option>
+                                                                <optgroup label="1ª categoria">
+                                                                    <option value="achado">Achado</option>
+                                                                </optgroup>
+                                                                <optgroup label="2ª categoria">
+                                                                  <option value="perdido">Perdido</option>
+                                                                  <option value="roubado">Roubado</option>
+                                                                </optgroup>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <textarea class="form-control" id="location"
@@ -209,7 +206,7 @@ Registo de objecto
     .wizard-content-left {
         background-blend-mode: darken;
         background-color: rgba(0, 0, 0, 0.45);
-        background-image: url("https://i.ibb.co/X292hJF/form-wizard-bg-2.jpg");
+        background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/396-mckinsey-21a0567-jir.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=1d29df4866197df8364a6de6ef541728");
         background-position: center center;
         background-size: cover;
         height: 100vh;
@@ -646,6 +643,25 @@ Registo de objecto
     setTimeout(() => {
         document.querySelector('#notification-warning').style.display = 'none'
     }, 3000);
+</script>
+
+<script>
+    $(function () {
+        $('#provincia').on('change', function (e) {
+            var provincia_id = e.target.value;
+            $('#municipio').empty();
+            //Ajax
+            $.get('/ajax-subcat?provincia_id=' + provincia_id, function (data) {
+                $('#municipio').append(
+                    '<option selected disabled>Selecionar município</option>')
+                $.each(data, function (index, subcatObj) {
+                    console.log(index)
+                    $('#municipio').append('<option value="' + subcatObj.id +
+                        '">' + subcatObj.nome + '</option>')
+                });
+            });
+        });
+    });
 </script>
 
 @endsection

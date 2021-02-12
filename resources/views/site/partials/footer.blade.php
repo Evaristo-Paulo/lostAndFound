@@ -5,29 +5,29 @@
             <div class="row">
 
                 <div class="col-lg-3 col-md-6 footer-contact">
-                    <h3>Bethany</h3>
+                    <h6 style="font-weight: bold">Localização</h6>
                     <p>
                         A108 Adam Street <br>
                         New York, NY 535022<br>
                         United States <br><br>
-                        <strong>Phone:</strong> +1 5589 55488 55<br>
+                        <strong>Telefone:</strong> +1 5589 55488 55<br>
                         <strong>Email:</strong> info@example.com<br>
                     </p>
                 </div>
 
                 <div class="col-lg-2 col-md-6 footer-links">
-                    <h4>Useful Links</h4>
+                    <h4>Links úteis</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Serviços</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Termos de Serviços</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Políticas de Privacidade</a></li>
                     </ul>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Our Services</h4>
+                    <h4>Serviços</h4>
                     <ul>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
                         <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
-                    <h4>Join Our Newsletter</h4>
+                    <h4>Newsletter</h4>
                     <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
                     <form action="" method="post">
                         <input type="email" name="email"><input type="submit" value="Subscribe">
@@ -53,7 +53,7 @@
 
         <div class="me-md-auto text-center text-md-start">
             <div class="copyright">
-                &copy; <script>document.write(new Date().getFullYear());</script> <strong><span>Devolve-ME!</span></strong> - Todos os direitos reservados
+                &copy; <script>document.write(new Date().getFullYear());</script> <strong><span>Devolve.ME</span></strong> - Todos os direitos reservados
             </div>
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">

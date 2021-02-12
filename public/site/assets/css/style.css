@@ -383,7 +383,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("../img/hero-bg.jpg") center center;
+  background: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s70-mckinsey-00223-chim.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=71521d2183d0373efb13e5d2da5ed4b4") center center;
   background-size: cover;
   position: relative;
 }
@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
   margin: 0 0 10px 0;
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 56px;
   color: #fff;

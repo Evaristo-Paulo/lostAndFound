@@ -18,11 +18,11 @@
                 <div class="col-lg-2 col-md-6 footer-links">
                     <h4>Links úteis</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Sobre</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Serviços</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Termos de Serviços</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Políticas de Privacidade</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#header">Home</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#about">Sobre</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#services">Serviços</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#">Termos de Serviços</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#">Políticas de Privacidade</a></li>
                     </ul>
                 </div>
 
@@ -39,9 +39,9 @@
 
                 <div class="col-lg-4 col-md-6 footer-newsletter">
                     <h4>Newsletter</h4>
-                    <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                    <p>Subscreva-se e receba notificações sobre objectos achados</p>
                     <form action="" method="post">
-                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                        <input type="email" name="email"><input type="submit" value="Subscrever">
                     </form>
                 </div>
 

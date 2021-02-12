@@ -9,12 +9,12 @@
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="#header">Home</a></li>
-                    <li><a href="#about">Sobre</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#portfolio">Destaques</a></li>
+                    <li><a href="/#header">Home</a></li>
+                    <li><a href="/#about">Sobre</a></li>
+                    <li><a href="/#services">Serviços</a></li>
+                    <li><a href="/#portfolio">Destaques</a></li>
                     <li><a href="{{ route('site.objecto.form') }}">Registo</a></li>
-                    <li><a href="#contact">Fale Conosco</a></li>
+                    <li><a href="/#contact">Fale Conosco</a></li>
                     <li class="get-started"><a href="{{  route('site.objecto.lista') }}">Perdidos e Achados</a></li>
                 </ul>
             </nav><!-- .nav-menu -->

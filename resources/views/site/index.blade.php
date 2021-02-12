@@ -50,7 +50,7 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero" class="d-flex align-items-center">
         <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-            <h1>Encontre seus pertences de maneira fácil e segura</h1>
+            <h1 style="line-height: 40px">Encontre seus pertences de maneira fácil e segura</h1>
             <h2></h2>
             <a href="{{  route('site.objecto.lista') }}" class="btn-get-started scrollto">Perdidos e Achados</a>
         </div>

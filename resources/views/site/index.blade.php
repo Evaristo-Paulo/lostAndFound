@@ -240,7 +240,7 @@
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">Ver todos</li>
+                            <li data-filter="*" class="filter-active"><a href="{{ route('site.objecto.lista') }}" style="color: #fff">Ver todos</a></li>
                         </ul>
                     </div>
                 </div>

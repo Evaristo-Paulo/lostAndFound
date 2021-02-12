@@ -112,8 +112,6 @@
                 <div class="row content">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
                         <h2>Sobre</h2>
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee
-                            trave</h3>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
                         <p>
@@ -181,8 +179,6 @@
                     <div class="col-lg-4">
                         <div class="section-title" data-aos="fade-right">
                             <h2>Serviços</h2>
-                            <p>Magnam dolores commodi suscipit nemo qui impedit suscipit alias ea. Quia fugiat sit in
-                                iste officiis commodi quidem hic quas.</p>
                         </div>
                     </div>
                     <div class="col-lg-8">
@@ -232,9 +228,6 @@
 
                 <div class="section-title" data-aos="fade-left">
                     <h2>Em destaques</h2>
-                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
-                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
-                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
 
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -362,8 +355,6 @@
                     <div class="col-lg-4">
                         <div class="section-title" data-aos="fade-right">
                             <h2>Testemunhos</h2>
-                            <p>Magnam dolores commodi suscipit uisquam quos quisquam cupiditate. Et nemo qui impedit
-                                suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                         </div>
                     </div>
                     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
@@ -453,9 +444,6 @@
                     <div class="col-lg-4" data-aos="fade-right">
                         <div class="section-title">
                             <h2>Fale conosco</h2>
-                            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum
-                                quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui
-                                impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                         </div>
                     </div>
 

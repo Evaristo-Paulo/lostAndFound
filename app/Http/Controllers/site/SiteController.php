@@ -76,9 +76,10 @@ class SiteController extends Controller
 
             $request->session()->flash('success', 'Registo efectuado com sucesso!');
             return redirect()->route('site.objecto.form');
-
-            return redirect()->route('painel.categorias.create');
         }
+
+        $request->session()->flash('error', 'Registo não efectuado com sucesso!');
+        return redirect()->route('site.objecto.form');
     }
 
 

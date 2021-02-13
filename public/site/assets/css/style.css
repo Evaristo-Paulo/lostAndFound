@@ -1505,6 +1505,12 @@ section {
   color: #000;
 }
 
+#notification-error {
+  background-color:#f59ea5 ;
+  padding: 10px 20px;
+  color: #000;
+}
+
 #search-box {
   display: flex;
   justify-content: center;

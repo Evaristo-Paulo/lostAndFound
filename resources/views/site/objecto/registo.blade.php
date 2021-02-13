@@ -44,6 +44,15 @@ Registo de objecto
                                 </div>
                             </div>
                         @endif
+                        @if(session('error'))
+                            <div class="page-header" id="notification-error">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <i class="ti-check"></i> {{ session('error') }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="x_content">
                             <div class="payment">
                                 <section class="wizard-section">
@@ -191,7 +200,11 @@ Registo de objecto
                                                                 name="foto[]" id="honame" multiple="multiple">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="file" class="form-control wizard-required"
+                                                            <input type="file" class="form-control"
+                                                                name="foto[]" id="file" multiple="multiple">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="file" class="form-control"
                                                                 name="foto[]" id="file" multiple="multiple">
                                                         </div>
                                                         <div class="form-group clearfix">
@@ -667,6 +680,9 @@ Registo de objecto
     }, 3000);
     setTimeout(() => {
         document.querySelector('#notification-warning').style.display = 'none'
+    }, 3000);
+    setTimeout(() => {
+        document.querySelector('#notification-error').style.display = 'none'
     }, 3000);
 </script>
 

@@ -27,25 +27,16 @@ class SiteController extends Controller
     public function store(Request $request)
     {
 
-        if ( $request->documento != null){
-            $hasObjecto = Objecto::where('num_documento',$request->documento )->first();
-            if ( $hasObjecto){
+        if ($request->documento != null) {
+            $hasObjecto = Objecto::where('num_documento', $request->documento)->first();
+            if ($hasObjecto) {
                 $request->session()->flash('warning', 'Foi encontrada uma correspondência deste objecto!');
                 return redirect()->route('site.objecto.form');
             }
         }
-        $nameFile = null;
-        dd( $request->all());            
-        
-        if ($request->hasFile('foto') && $request->file('foto')->isValid()) {
-            $name = uniqid(date('HisYmd'));
-            $extension = $request->foto->extension();
-            $nameFile = "{$name}.{$extension}";
-            $upload = $request->foto->storeAs('objectos', $nameFile);
 
-            if (!$upload) {
-            }
-
+        //dd($request->all());
+        if ($request->hasFile('foto')) {
             $pessoa = new Pessoa();
             $pessoa->nome = $request->nome;
             $pessoa->telefone = $request->telefone;
@@ -66,22 +57,32 @@ class SiteController extends Controller
             $objecto->localizacao_id = $localizacao->id;
             $objecto->save();
 
-            $foto = new Imagem();
-            $foto->objecto_id = $objecto->id;
-            $foto->descricao = $request->objDescricao;
-            $foto->imagem = $nameFile;
-            $foto->save();
-            
-            $request->session()->flash('success', 'Registado com sucesso!');
+            foreach ($request->file('foto') as $index => $file) {
+                if ($file->isValid()) {
+                    $nameFile = null;
+                    $name = uniqid(date('HisYmd'));
+                    $extension = $file->extension();
+                    $nameFile = "{$name}.{$extension}";
+                    $upload = $file->storeAs('objectos', $nameFile);
+                    if (!$upload) {
+                    }
+                    $foto = new Imagem();
+                    $foto->objecto_id = $objecto->id;
+                    $foto->descricao = $request->objDescricao;
+                    $foto->imagem = $nameFile;
+                    $foto->save();
+                }
+            }
 
-            dd( $objecto );
+            $request->session()->flash('success', 'Registo efectuado com sucesso!');
+            return redirect()->route('site.objecto.form');
 
             return redirect()->route('painel.categorias.create');
         }
     }
 
 
-    
+
     public function listas_objectos()
     {
         return view('site.objecto.lista');
@@ -91,6 +92,4 @@ class SiteController extends Controller
     {
         return view('site.objecto.visualiza');
     }
-
-
 }

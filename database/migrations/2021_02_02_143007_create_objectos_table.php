@@ -15,7 +15,7 @@ class CreateObjectosTable extends Migration
     {
         Schema::create('objectos', function (Blueprint $table) {
             $table->id();
-            $table->integer('num_documento')->nullable();
+            $table->string('num_documento')->nullable();
             $table->text('descricao')->nullable();
             $table->integer('divulga')->default(1);
             $table->enum('estado', ['perdido', 'roubado', 'achado', 'fechado'])->default('perdido');

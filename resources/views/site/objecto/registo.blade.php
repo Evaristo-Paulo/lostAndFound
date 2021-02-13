@@ -35,6 +35,15 @@ Registo de objecto
                                 </div>
                             </div>
                         @endif
+                        @if(session('success'))
+                            <div class="page-header" id="notification-success">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <i class="ti-check"></i> {{ session('success') }}
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="x_content">
                             <div class="payment">
                                 <section class="wizard-section">
@@ -55,6 +64,7 @@ Registo de objecto
                                                             <li class="active"><span>1</span></li>
                                                             <li><span>2</span></li>
                                                             <li><span>3</span></li>
+                                                            <li><span>4</span></li>
                                                         </ul>
                                                     </div>
                                                     <fieldset class="wizard-fieldset show">
@@ -108,10 +118,6 @@ Registo de objecto
                                                                 rows="2"></textarea>
                                                             <label for="location"
                                                                 class="wizard-form-text-label">Descrição (opcional)</label>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input type="file" class="form-control wizard-required"
-                                                                name="foto" id="honame" multiple>
                                                         </div>
                                                         <div class="form-group clearfix">
                                                             <a href="javascript:;"
@@ -174,10 +180,28 @@ Registo de objecto
                                                         <div class="form-group clearfix">
                                                             <a href="javascript:;"
                                                                 class="form-wizard-previous-btn float-left">Anterior</a>
+                                                            <a href="javascript:;"
+                                                                class="form-wizard-next-btn float-right">Próximo</a>
+                                                        </div>
+                                                    </fieldset>
+                                                    <fieldset class="wizard-fieldset">
+                                                        <h5>Fotografia do objecto</h5>
+                                                        <div class="form-group">
+                                                            <input type="file" class="form-control wizard-required"
+                                                                name="foto[]" id="honame" multiple="multiple">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="file" class="form-control wizard-required"
+                                                                name="foto[]" id="file" multiple="multiple">
+                                                        </div>
+                                                        <div class="form-group clearfix">
+                                                            <a href="javascript:;"
+                                                                class="form-wizard-previous-btn float-left">Anterior</a>
                                                             <button type="submit"
                                                                 class="form-wizard-submit float-right">Registar</button>
                                                         </div>
                                                     </fieldset>
+                                                    
                                                 </form>
                                             </div>
                                         </div>
@@ -638,6 +662,9 @@ Registo de objecto
 
 </script>
 <script>
+    setTimeout(() => {
+        document.querySelector('#notification-success').style.display = 'none'
+    }, 3000);
     setTimeout(() => {
         document.querySelector('#notification-warning').style.display = 'none'
     }, 3000);

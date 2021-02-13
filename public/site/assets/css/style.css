@@ -1499,6 +1499,12 @@ section {
     color: #fff;
 }
 
+#notification-success {
+  background-color:#D4EDDA ;
+  padding: 10px 20px;
+  color: #000;
+}
+
 #search-box {
   display: flex;
   justify-content: center;

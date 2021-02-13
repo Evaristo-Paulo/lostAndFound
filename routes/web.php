@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'site\SiteController@index')->name('site.index');
-Route::get('/registo-de-objecto', 'site\SiteController@form_objecto')->name('site.objecto.form');
-Route::post('/registo-de-objecto', 'site\SiteController@store')->name('site.objecto.store');
-Route::get('/todos-objectos', 'site\SiteController@listas_objectos')->name('site.objecto.lista');
+Route::get('/objectos/registo', 'site\SiteController@form_objecto')->name('site.objecto.form');
+Route::post('/objectos/registo', 'site\SiteController@store')->name('site.objecto.store');
+Route::get('/objectos', 'site\SiteController@listas_objectos')->name('site.objecto.lista');
 Route::get('/objectos/{id}/visualizacao', 'site\SiteController@visualiza_objectos')->name('site.objecto.visualiza');
 
  /* POPULAR PROVÍNCIA/MUNICÍPIO */

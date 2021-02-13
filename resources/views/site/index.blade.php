@@ -183,35 +183,35 @@
                     </div>
                     <div class="col-lg-8">
                         <div class="row">
-                            <div class="col-md-6 d-flex align-items-stretch">
+                            <div class="col-md-6 d-flex align-items-stretch" id="services-lost-object">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
-                                    <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                                    <h4><a href="">Lorem Ipsum</a></h4>
-                                    <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                                    <div class="icon"><i class="bx bx-file"></i></div>
+                                    <h4><a href="{{  route('site.objecto.form') }}">Registo de Objectos Perdidos</a></h4>
+                                    <p>Informe os objectos perdidos, dando informações extra acerca da última localização</p>
                                 </div>
                             </div>
 
-                            <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                            <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" id="services-robbed-object">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
                                     <div class="icon"><i class="bx bx-file"></i></div>
-                                    <h4><a href="">Sed ut perspiciatis</a></h4>
-                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                    <h4><a href="{{  route('site.objecto.form') }}">Registo de Objectos Roubados</a></h4>
+                                    <p>Informe os objectos roubados, dando informações extra acerca da última localização</p>
                                 </div>
                             </div>
 
-                            <div class="col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="col-md-6 d-flex align-items-stretch mt-4" id="services-found-object">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
-                                    <div class="icon"><i class="bx bx-tachometer"></i></div>
-                                    <h4><a href="">Magni Dolores</a></h4>
-                                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                                    <div class="icon"><i class="bx bx-file"></i></div>
+                                    <h4><a href="{{  route('site.objecto.form') }}">Registo de Objectos Achados</a></h4>
+                                    <p>Receba uma recompensa por cada registo de objecto achado e entregue ao seu respectivo dono</p>
                                 </div>
                             </div>
 
-                            <div class="col-md-6 d-flex align-items-stretch mt-4">
+                            <div class="col-md-6 d-flex align-items-stretch mt-4" id="services-notification">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
-                                    <div class="icon"><i class="bx bx-world"></i></div>
-                                    <h4><a href="">Nemo Enim</a></h4>
-                                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                                    <div class="icon"><i class="bx bx-phone-call"></i></div>
+                                    <h4><a href="#">Notificação</a></h4>
+                                    <p>Clientes que pertencem os objectos achados, são notificados automaticamente pelo nosso serviço de notificações.</p>
                                 </div>
                             </div>
 
@@ -453,7 +453,7 @@
                             frameborder="0" allowfullscreen></iframe>
                         <div class="info mt-4">
                             <i class="icofont-google-map"></i>
-                            <h4>Location:</h4>
+                            <h4>Localização:</h4>
                             <p>A108 Adam Street, New York, NY 535022</p>
                         </div>
                         <div class="row">
@@ -461,14 +461,14 @@
                                 <div class="info">
                                     <i class="icofont-envelope"></i>
                                     <h4>Email:</h4>
-                                    <p>info@example.com</p>
+                                    <p>devolve.me@devolveme.com</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="info w-100 mt-4">
                                     <i class="icofont-phone"></i>
-                                    <h4>Call:</h4>
-                                    <p>+1 5589 55488 55s</p>
+                                    <h4>Ligar:</h4>
+                                    <p>(+244) 929123444</p>
                                 </div>
                             </div>
                         </div>
@@ -477,32 +477,32 @@
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Your Name" data-rule="minlen:4"
-                                        data-msg="Please enter at least 4 chars" />
+                                        placeholder="Nome" data-rule="minlen:4"
+                                        data-msg="Por favor, entre com pelo menos 4 caracteres" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
                                     <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Your Email" data-rule="email"
-                                        data-msg="Please enter a valid email" />
+                                        placeholder="Email" data-rule="email"
+                                        data-msg="Por favor, entre com um email válido" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
                             <div class="form-group mt-3">
                                 <input type="text" class="form-control" name="subject" id="subject"
-                                    placeholder="Subject" data-rule="minlen:4"
-                                    data-msg="Please enter at least 8 chars of subject" />
+                                    placeholder="Assunto" data-rule="minlen:4"
+                                    data-msg="Por favor, entre com pelo menos 8 caracteres" />
                                 <div class="validate"></div>
                             </div>
                             <div class="form-group mt-3">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required"
-                                    data-msg="Please write something for us" placeholder="Message"></textarea>
+                                <textarea class="form-control" name="message" rows="2" data-rule="required"
+                                    data-msg="Por favor, escreva algo para nós" placeholder="Mensagem"></textarea>
                                 <div class="validate"></div>
                             </div>
                             <div class="mb-3">
-                                <div class="loading">Loading</div>
+                                <div class="loading">Carregando ...</div>
                                 <div class="error-message"></div>
-                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                                <div class="sent-message">Mensagem enviada. Obrigado!</div>
                             </div>
                             <div class="text-center"><button type="submit">Enviar</button></div>
                         </form>

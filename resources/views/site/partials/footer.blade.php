@@ -29,11 +29,10 @@
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                        <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#services-lost-object">Registo de Objectos Perdidos</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#services-robbed-object">Registo de Objectos Roubados</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#services-found-object">Registo de Objectos Achados</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="/#services-notification">Notificação</a></li>
                     </ul>
                 </div>
 

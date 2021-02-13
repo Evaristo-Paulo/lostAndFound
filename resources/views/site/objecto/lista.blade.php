@@ -26,12 +26,23 @@ Lista de objectos
         <div class="container">
             <section id="portfolio" class="portfolio">
                 <div class="container">
-
-                    <div class="section-title" data-aos="fade-left">
-                        <h2>Aqui entra um INPUT PESQUISAR</h2>
-                    </div>
+                    <form class="row" id="search-box">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <div class="h-100">
+                                    <div class="h-100">
+                                        <div class="searchbar">
+                                            <input class="search_input" type="text" name="" placeholder="Pesquisar...">
+                                            <button type="submit" class="search_icon"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
 
                     <div class="row" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="filter-category">Filtragem de resultados</h4>
                         <div class="col-lg-12 d-flex justify-content-center">
                             <ul id="portfolio-flters">
                                 <ul id="portfolio-flters">
@@ -57,8 +68,8 @@ Lista de objectos
                                         <a href="{{ url('site/assets/img/portfolio/portfolio-1.jpg') }}"
                                             data-gall="portfolioGallery" class="venobox" title="App 1"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -75,8 +86,8 @@ Lista de objectos
                                         <a href="{{ url('site/assets/img/portfolio/portfolio-2.jpg') }}"
                                             data-gall="portfolioGallery" class="venobox" title="Web 3"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -93,8 +104,8 @@ Lista de objectos
                                         <a href="{{ url('site/assets/img/portfolio/portfolio-3.jpg') }}"
                                             data-gall="portfolioGallery" class="venobox" title="App 2"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -111,8 +122,8 @@ Lista de objectos
                                         <a href="{{ url('site/assets/img/portfolio/portfolio-4.jpg') }}"
                                             data-gall="portfolioGallery" class="venobox" title="Card 2"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -129,8 +140,8 @@ Lista de objectos
                                         <a href="{{ url('site/assets/img/portfolio/portfolio-5.jpg') }}"
                                             data-gall="portfolioGallery" class="venobox" title="Web 2"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -147,8 +158,8 @@ Lista de objectos
                                         <a href="{{ url('site/assets/img/portfolio/portfolio-6.jpg') }}"
                                             data-gall="portfolioGallery" class="venobox" title="App 3"><i
                                                 class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}" title="More Details"><i
-                                                class="bx bx-link"></i></a>
+                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
+                                            title="More Details"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -168,6 +179,9 @@ Lista de objectos
 
 
 @section('site-css')
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 @endsection
 
 @section('site-js')

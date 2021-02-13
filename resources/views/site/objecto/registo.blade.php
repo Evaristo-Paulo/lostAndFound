@@ -156,10 +156,8 @@ Registo de objecto
                                                         <div class="form-group">
                                                             <select class="form-control" name="estado">
                                                                 <option value="#" selected disabled>Selecionar condição do objecto</option>
-                                                                <optgroup label="1ª categoria">
-                                                                    <option value="achado">Achado</option>
-                                                                </optgroup>
-                                                                <optgroup label="2ª categoria">
+                                                                <option value="achado">Achado</option>
+                                                                <optgroup label="Extraviado">
                                                                   <option value="perdido">Perdido</option>
                                                                   <option value="roubado">Roubado</option>
                                                                 </optgroup>

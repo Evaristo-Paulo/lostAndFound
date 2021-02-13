@@ -9,7 +9,7 @@
 
             <nav class="nav-menu d-none d-lg-block">
                 <ul>
-                    <li><a href="/#header">Home</a></li>
+                    <li><a href="/#hero">Home</a></li>
                     <li><a href="/#about">Sobre</a></li>
                     <li><a href="/#services">Serviços</a></li>
                     <li><a href="/#portfolio">Destaques</a></li>

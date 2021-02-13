@@ -15,7 +15,9 @@ class SiteController extends Controller
 {
     public function index()
     {
-        return view('site.index');
+        $funcao = new Objecto();
+        $listaObjecto = $funcao->listagem_objectos();
+        return view('site.index', compact('listaObjecto'));
     }
 
     public function form_objecto()
@@ -86,11 +88,25 @@ class SiteController extends Controller
 
     public function listas_objectos()
     {
-        return view('site.objecto.lista');
+        $funcao = new Objecto();
+        $listaObjecto = $funcao->listagem_objectos();
+        $categorias = $funcao->pegar_categoria_listagem_objectos();
+
+        return view('site.objecto.lista', compact('listaObjecto', 'categorias'));
     }
 
-    public function visualiza_objectos()
+    public function visualiza_objectos( Request $request, $id )
     {
-        return view('site.objecto.visualiza');
+        $objecto = Objecto::where('id', $id )->first();
+
+        if (!$objecto){
+            $request->session()->flash('error', 'Não conseguimos localizar este objecto!');
+            return redirect()->route('site.objecto.lista');
+        }
+
+        $funcao = new Objecto();
+        $objecto = $funcao->visualizacao_objectos($id);
+
+        return view('site.objecto.visualiza', compact('objecto'));
     }
 }

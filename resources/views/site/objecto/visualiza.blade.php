@@ -29,18 +29,19 @@ Visualização de objecto
           <div class="portfolio-details-container" data-aos="fade-up" data-aos-delay="100">
   
             <div class="owl-carousel portfolio-details-carousel">
-              <img src="{{ url('site/assets/img/portfolio/portfolio-details-1.jpg')}}" class="img-fluid" alt="">
-              <img src="{{ url('site/assets/img/portfolio/portfolio-details-2.jpg')}}" class="img-fluid" alt="">
-              <img src="{{ url('site/assets/img/portfolio/portfolio-details-3.jpg')}}" class="img-fluid" alt="">
+              @foreach($objecto['fotografia'] as $fotografia)
+                <img src="{{ url("storage/objectos/". $fotografia. "") }}" alt="">
+              @endforeach
             </div>
   
             <div class="portfolio-info">
               <h3>Detalhes Principais</h3>
               <ul>
-                <li><strong>Categoria</strong>: Documentação</li>
-                <li><strong>Nº documento</strong>: 122333444455555</li>
-                <li><strong>Localização</strong>: Cacuaco, Central. Sequele</li>
-                <li><strong>Condição</strong>: Perdido</li>
+                <li><strong>Categoria</strong>: {{  $objecto['categoria'] }}</li>
+                <li><strong>Nº documento</strong>: {{  $objecto['n_documento'] }}</li>
+                <li><strong>Localização</strong>: {{  $objecto['municipio'] }}, {{  $objecto['bairro'] }}</li>
+                <li><strong>Condição</strong>: {{  $objecto['condicao'] }}</li>
+                <li><strong>Fotografia(s)</strong>: {{  count($objecto['fotografia']) }}</li>
               </ul>
             </div>
   
@@ -49,7 +50,7 @@ Visualização de objecto
           <div class="portfolio-description">
             <h2>Informações Adicionais</h2>
             <p>
-              Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              {{  $objecto['obj_descricao'] }}
             </p>
           </div>
   

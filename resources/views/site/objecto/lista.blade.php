@@ -24,6 +24,15 @@ Lista de objectos
 
     <section class="inner-page">
         <div class="container">
+            @if(session('error'))
+                <div class="page-header" id="notification-error">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <i class="ti-check"></i> {{ session('error') }}
+                        </div>
+                    </div>
+                </div>
+            @endif
             <section id="portfolio" class="portfolio">
                 <div class="container">
                     <form class="row" id="search-box">
@@ -47,124 +56,34 @@ Lista de objectos
                             <ul id="portfolio-flters">
                                 <ul id="portfolio-flters">
                                     <li data-filter="*" class="filter-active">Todos</li>
-                                    <li data-filter=".filter-app">Documentação</li>
-                                    <li data-filter=".filter-card">Telefone</li>
-                                    <li data-filter=".filter-web">Viatura</li>
-                                    <li data-filter=".filter-web">Outros</li>
+                                    @foreach($categorias as $categoria)
+                                        <li data-filter=".filter-{{ $categoria['categoria'] }}">{{ $categoria['categoria'] }}</li>
+                                    @endforeach
                                 </ul>
                         </div>
                     </div>
 
                     <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img src="{{ url('site/assets/img/portfolio/portfolio-1.jpg') }}"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>App 1</h4>
-                                    <p>Documentação</p>
-                                    <div class="portfolio-links">
-                                        <a href="{{ url('site/assets/img/portfolio/portfolio-1.jpg') }}"
-                                            data-gall="portfolioGallery" class="venobox" title="App 1"><i
-                                                class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
-                                            title="More Details"><i class="bx bx-link"></i></a>
+                        @foreach($listaObjecto as $objecto)
+                            <div class="col-lg-4 col-md-6 portfolio-item filter-{{$objecto['categoria']}}">
+                                <div class="portfolio-wrap">
+                                    <img src="{{ url("storage/objectos/". $objecto['fotografia']. "") }}"
+                                        class="img-fluid" alt="">
+                                    <div class="portfolio-info">
+                                        <h4>{{ $objecto['categoria'] }} {{$objecto['id']}}</h4>
+                                        <p>{{ $objecto['categoria'] }}</p>
+                                        <div class="portfolio-links">
+                                            <a href="{{ url("storage/objectos/". $objecto['fotografia']. "") }}"
+                                                data-gall="portfolioGallery" class="venobox" title="{{ $objecto['categoria'] }} {{ $objecto['id'] }}"><i
+                                                    class="bx bx-plus"></i></a>
+                                            <a href="{{ route('site.objecto.visualiza', $objecto['id']) }}"
+                                                title="Mais Detalhes"><i class="bx bx-link"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img src="{{ url('site/assets/img/portfolio/portfolio-2.jpg') }}"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Web 3</h4>
-                                    <p>Outros</p>
-                                    <div class="portfolio-links">
-                                        <a href="{{ url('site/assets/img/portfolio/portfolio-2.jpg') }}"
-                                            data-gall="portfolioGallery" class="venobox" title="Web 3"><i
-                                                class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
-                                            title="More Details"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img src="{{ url('site/assets/img/portfolio/portfolio-3.jpg') }}"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>App 2</h4>
-                                    <p>Documentação</p>
-                                    <div class="portfolio-links">
-                                        <a href="{{ url('site/assets/img/portfolio/portfolio-3.jpg') }}"
-                                            data-gall="portfolioGallery" class="venobox" title="App 2"><i
-                                                class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
-                                            title="More Details"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-                            <div class="portfolio-wrap">
-                                <img src="{{ url('site/assets/img/portfolio/portfolio-4.jpg') }}"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Card 2</h4>
-                                    <p>Telefone</p>
-                                    <div class="portfolio-links">
-                                        <a href="{{ url('site/assets/img/portfolio/portfolio-4.jpg') }}"
-                                            data-gall="portfolioGallery" class="venobox" title="Card 2"><i
-                                                class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
-                                            title="More Details"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-                            <div class="portfolio-wrap">
-                                <img src="{{ url('site/assets/img/portfolio/portfolio-5.jpg') }}"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>Web 2</h4>
-                                    <p>Outros</p>
-                                    <div class="portfolio-links">
-                                        <a href="{{ url('site/assets/img/portfolio/portfolio-5.jpg') }}"
-                                            data-gall="portfolioGallery" class="venobox" title="Web 2"><i
-                                                class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
-                                            title="More Details"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-                            <div class="portfolio-wrap">
-                                <img src="{{ url('site/assets/img/portfolio/portfolio-6.jpg') }}"
-                                    class="img-fluid" alt="">
-                                <div class="portfolio-info">
-                                    <h4>App 3</h4>
-                                    <p>Documentação</p>
-                                    <div class="portfolio-links">
-                                        <a href="{{ url('site/assets/img/portfolio/portfolio-6.jpg') }}"
-                                            data-gall="portfolioGallery" class="venobox" title="App 3"><i
-                                                class="bx bx-plus"></i></a>
-                                        <a href="{{ route('site.objecto.visualiza', 1) }}"
-                                            title="More Details"><i class="bx bx-link"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        @endforeach
+                        
                     </div>
 
                 </div>
@@ -185,4 +104,9 @@ Lista de objectos
 @endsection
 
 @section('site-js')
+<script>
+    setTimeout(() => {
+        document.querySelector('#notification-error').style.display = 'none'
+    }, 3000);
+</script>
 @endsection

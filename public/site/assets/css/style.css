@@ -1646,7 +1646,8 @@ section {
     line-height: 40px;
     font-size: .9rem;
     padding: 0 10px;
-    width: 450px;
+    padding-right: 45px;
+    width: 100%;
     caret-color: rgba(0, 0, 0, 0.685);
 }
 
@@ -1893,9 +1894,9 @@ input[type="checkbox"]:focus+label::before {
 }
 
 /* CHAT */
-.chat-card {
+.chat-card, .add-success-card {
     display: flex;
-    margin-top: 15%;
+    margin-top: 12%;
     align-items: center;
     flex-direction: column;
     z-index: 1001;
@@ -1904,7 +1905,7 @@ input[type="checkbox"]:focus+label::before {
     background: transparent;
 }
 
-#chat {
+#chat, #add-success {
     position: fixed;
     display: none;
     width: 100%;
@@ -1912,6 +1913,10 @@ input[type="checkbox"]:focus+label::before {
     background: rgba(0, 0, 0, 0.705);
     z-index: 100;
     top: 0px;
+}
+
+#add-success {
+  display: block;
 }
 
 .chat-card .card-body .btn {
@@ -1964,8 +1969,15 @@ input[type="checkbox"]:focus+label::before {
     border-radius: 0px;
 }
 
-.chat-card .card-body {
+.chat-card .card-body{
     background: #009970;
+    margin: 0 20px;
+    padding: 0;
+    position: relative;
+}
+
+.add-success-body {
+    background: #fff;
     margin: 0 20px;
     padding: 0;
     position: relative;
@@ -1982,9 +1994,29 @@ input[type="checkbox"]:focus+label::before {
   cursor: pointer;
 }
 
+#add-success h5{
+    font-size: 1rem;
+    margin-top: 20px;
+    text-align: center;
+    color: #009970
+  }
+
+.icon-success {
+    text-align: center;
+    margin: 30px 0;
+}
+.icon-success i {
+    font-size: 5rem;
+    color: #009970
+} 
+
 @media screen and (max-width: 1024px) {
-    .chat-card {
+    .chat-card{
         margin-top: 40%;
+    }
+
+    .add-success-card {
+        margin-top: 60%;
     }
 
 }

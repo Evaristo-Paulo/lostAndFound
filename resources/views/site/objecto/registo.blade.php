@@ -36,10 +36,12 @@ Registo de objecto
                             </div>
                         @endif
                         @if(session('success'))
-                            <div class="page-header" id="notification-success">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <i class="ti-check"></i> {{ session('success') }}
+                            <div id="notification-success add-success">
+                                <div class="card add-success-card">
+                                    <div class="add-success-body">
+                                        <div class="card-header">
+                                            <h5>Registo de objecto achado</h5>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +126,7 @@ Registo de objecto
                                                         <div class="form-group">
                                                             <textarea class="form-control" id="location"
                                                                 name="objDescricao" name="" id="" cols="30"
-                                                                rows="2"></textarea>
+                                                                rows="2" maxlength="150"></textarea>
                                                             <label for="location"
                                                                 class="wizard-form-text-label">Descrição (opcional)</label>
                                                         </div>
@@ -181,7 +183,7 @@ Registo de objecto
                                                         <div class="form-group">
                                                             <textarea class="form-control" id="location"
                                                                 name="localDescricao" cols="30"
-                                                                rows="2"></textarea>
+                                                                rows="2" maxlength="150"></textarea>
                                                             <label for="location"
                                                                 class="wizard-form-text-label">Informação adicional (opcional)
                                                             </label>

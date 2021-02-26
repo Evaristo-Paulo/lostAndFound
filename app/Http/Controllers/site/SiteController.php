@@ -11,6 +11,7 @@ use App\Models\TipoObjecto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\ObjectoAchadoPessoa;
 
 class SiteController extends Controller
 {
@@ -114,5 +115,22 @@ class SiteController extends Controller
         $objecto = $funcao->visualizacao_objectos($id);
 
         return view('site.objecto.visualiza', compact('objecto'));
+    }
+
+    public function store_objecto_achado( Request $request ){
+        $pessoa = new Pessoa();
+        $pessoa->nome = $request->nome;
+        $pessoa->telefone = $request->telefone;
+        $pessoa->save();
+
+        $dado = new ObjectoAchadoPessoa ();
+        $dado->pessoa_id = $pessoa->id;
+        $dado->objecto_id = $request->idObjecto;
+        $dado->descricao = $request->descricao;
+        $dado->save();
+        
+        $request->session()->flash('success', 'Registo efectuado com sucesso!');
+
+       return response()->json($request);
     }
 }

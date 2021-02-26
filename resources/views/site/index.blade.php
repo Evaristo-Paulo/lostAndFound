@@ -88,25 +88,18 @@
             </div>
         </section><!-- End About Section -->
 
-
-
-        <div id="demo-modal" class="modal">
-            <div class="modal__content">
-                <h1>CSS Only Modal</h1>
-
-                <p>
-                    You can use the :target pseudo-class to create a modals with Zero JavaScript. Enjoy!
-                </p>
-
-                <div class="modal__footer">
-                    Made with <i class="fa fa-heart"></i>, by <a href="https://twitter.com/denicmarko"
-                        target="_blank">@denicmarko</a>
+        @if(session('success'))
+        <div id="add-success" data-aos="fade-in" data-aos-delay="200">
+            <div class="card add-success-card">
+                <div class="add-success-body">
+                    <div class="card-header">
+                        <h5>Objecto achado registado com sucesso!</h5>
+                        <p class="icon-success"><i class="bx bx-check-circle" ></i> </p>
+                    </div>
                 </div>
-
-                <a href="#" class="modal__close">&times;</a>
             </div>
         </div>
-
+        @endif
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta counts">
             <div class="container">
@@ -233,8 +226,7 @@
                                 <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
                                 <h5 class="card-subtitle">
                                     {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text">{{ $objecto['descricao']  }}</p>
                                 <p class="card-text obj-achado"
                                     data-objecto="{{ $objecto['id'] }}"><small><i
                                             class="bx bx-check"></i> Achei</small></p>
@@ -394,7 +386,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" rows="2" data-rule="required"
-                                    data-msg="Por favor, escreva algo para nós" placeholder="Mensagem"></textarea>
+                                    data-msg="Por favor, escreva algo para nós" placeholder="Mensagem" maxlength="150"></textarea>
                                 <div class="validate"></div>
                             </div>
                             <div class="mb-3">
@@ -442,6 +434,10 @@
             })
         });
 
+        setTimeout(() => {
+            document.querySelector('#add-success').style.display = 'none'
+        }, 6000);
+
     </script>
 
     <!-- Template Main JS File -->
@@ -488,7 +484,25 @@
                 formChat.addEventListener('submit', function (e) {
                     e.preventDefault();
 
+                    let nome = $('#nome-modal').val();
+                    let telefone = $('#telefone-modal').val();
+                    let descricao = $('#descricao-modal').val();
+
                     /* Aqui entra o AJAX */
+                    $.ajax({
+                        url: "/objectos/achado-por-pessoa",
+                        type:"POST",
+                        data:{
+                            "_token": "{{ csrf_token() }}",
+                            nome: nome,
+                            telefone: telefone,
+                            descricao: descricao,
+                            idObjecto: IDobjecto
+                        },
+                        success:function(response){
+                            document.location.reload(true);
+                        },
+                    });
                 })
 
             })

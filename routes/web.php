@@ -22,6 +22,8 @@ Route::post('/objectos/registo', 'site\SiteController@store')->name('site.object
 Route::get('/objectos', 'site\SiteController@listas_objectos')->name('site.objecto.lista');
 Route::get('/objectos/{id}/visualizacao', 'site\SiteController@visualiza_objectos')->name('site.objecto.visualiza');
 
+Route::post('/objectos/achado-por-pessoa', 'site\SiteController@store_objecto_achado')->name('site.objecto.achado.store');
+
  /* POPULAR PROVÍNCIA/MUNICÍPIO */
  Route::get('/ajax-subcat', function ( Request $request ) {
     $provincia_id = $request->input('provincia_id');

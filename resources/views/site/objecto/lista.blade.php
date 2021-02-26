@@ -21,7 +21,18 @@ Lista de objectos
 
         </div>
     </section><!-- End Breadcrumbs -->
-
+    @if(session('success'))
+        <div id="add-success" data-aos="fade-in" data-aos-delay="200">
+            <div class="card add-success-card">
+                <div class="add-success-body">
+                    <div class="card-header">
+                        <h5>Objecto achado registado com sucesso!</h5>
+                        <p class="icon-success"><i class="bx bx-check-circle" ></i> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
     <section class="inner-page">
         <div class="container both-side-list">
             <div id="left-side-filtragem">
@@ -159,8 +170,7 @@ Lista de objectos
                                         <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
                                         <h5 class="card-subtitle">
                                             {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a natural
-                                            lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text">{{ $objecto['descricao']  }}</p>
                                         @if($objecto['estado'] !=  'achado' && $objecto['estado'] !=  'fechado')
                                             <p class="card-text obj-achado"
                                             data-objecto="{{ $objecto['id'] }}"><small><i
@@ -203,6 +213,11 @@ Lista de objectos
         document.querySelector('#notification-error').style.display = 'none'
     }, 3000);
 
+    setTimeout(() => {
+            document.querySelector('#add-success').style.display = 'none'
+    }, 5000);
+
+
     /* CLicar na opção achei*/
     var numItem = document.getElementsByClassName('obj-achado');
 
@@ -217,7 +232,25 @@ for (var i = 0; i < numItem.length; i++) {
         formChat.addEventListener('submit', function (e) {
             e.preventDefault();
 
+            let nome = $('#nome-modal').val();
+            let telefone = $('#telefone-modal').val();
+            let descricao = $('#descricao-modal').val();
+
             /* Aqui entra o AJAX */
+            $.ajax({
+                url: "/objectos/achado-por-pessoa",
+                type:"POST",
+                data:{
+                    "_token": "{{ csrf_token() }}",
+                    nome: nome,
+                    telefone: telefone,
+                    descricao: descricao,
+                    idObjecto: IDobjecto
+                },
+                success:function(response){
+                    document.location.reload(true);
+                },
+            });
         })
 
     })

@@ -43,6 +43,9 @@
 
 <body>
 
+    @include('site.partials.modal')
+
+
     <!-- ======= Header ======= -->
     @include('site.partials.navegation')
     <!-- End Header -->
@@ -52,7 +55,8 @@
         <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
             <h1 style="line-height: 40px">Encontre seus pertences de maneira fácil e segura</h1>
             <h2></h2>
-            <a href="{{  route('site.objecto.lista') }}" class="btn-get-started scrollto">Perdidos e Achados</a>
+            <a href="{{ route('site.objecto.lista') }}" class="btn-get-started scrollto">Perdidos e
+                Achados</a>
         </div>
     </section><!-- End Hero -->
 
@@ -68,7 +72,8 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
                         <p>
-                            A <strong>DEVOLVE.ME</strong> é um sistema que surge para facilitar o indivíduo a ter seus bens, outrora extraviados, recuperados.
+                            A <strong>DEVOLVE.ME</strong> é um sistema que surge para facilitar o indivíduo a ter seus
+                            bens, outrora extraviados, recuperados.
                         </p>
                         <p></p>
                         <ul>
@@ -76,12 +81,31 @@
                             <li><i class="ri-check-double-line"></i> Indivíduo B informa o que encontrou.</li>
                             <li><i class="ri-check-double-line"></i> A devolve.ME providencia a entrega do objecto.</li>
                         </ul>
-                        
+
                     </div>
                 </div>
 
             </div>
         </section><!-- End About Section -->
+
+
+
+        <div id="demo-modal" class="modal">
+            <div class="modal__content">
+                <h1>CSS Only Modal</h1>
+
+                <p>
+                    You can use the :target pseudo-class to create a modals with Zero JavaScript. Enjoy!
+                </p>
+
+                <div class="modal__footer">
+                    Made with <i class="fa fa-heart"></i>, by <a href="https://twitter.com/denicmarko"
+                        target="_blank">@denicmarko</a>
+                </div>
+
+                <a href="#" class="modal__close">&times;</a>
+            </div>
+        </div>
 
         <!-- ======= Cta Section ======= -->
         <section id="cta" class="cta counts">
@@ -89,24 +113,19 @@
 
                 <div class="row counters">
 
-                    <div class="col-lg-3 col-6 text-center">
-                        <span data-toggle="counter-up">232</span>
-                        <p>Clientes</p>
-                    </div>
-
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                         <span data-toggle="counter-up">521</span>
-                        <p>Objectos Perdidos/Roubados</p>
+                        <p>Extraviados</p>
                     </div>
 
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-4 col-md-6  col-sm-12 text-center">
                         <span data-toggle="counter-up">1,463</span>
-                        <p>Objectos Achados</p>
+                        <p>Achados</p>
                     </div>
 
-                    <div class="col-lg-3 col-6 text-center">
+                    <div class="col-lg-4 col-md-6 col-sm-12 text-center">
                         <span data-toggle="counter-up">15</span>
-                        <p>Objectos Entregues</p>
+                        <p>Entregues</p>
                     </div>
 
                 </div>
@@ -129,24 +148,30 @@
                             <div class="col-md-6 d-flex align-items-stretch" id="services-lost-object">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="100">
                                     <div class="icon"><i class="bx bx-file"></i></div>
-                                    <h4><a href="{{  route('site.objecto.form') }}">Registo de Objectos Perdidos</a></h4>
-                                    <p>Informe os objectos perdidos, dando informações extra acerca da última localização</p>
+                                    <h4><a href="{{ route('site.objecto.form') }}">Registo de Objectos
+                                            Perdidos</a></h4>
+                                    <p>Informe os objectos perdidos, dando informações extra acerca da última
+                                        localização</p>
                                 </div>
                             </div>
 
                             <div class="col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" id="services-robbed-object">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="200">
                                     <div class="icon"><i class="bx bx-file"></i></div>
-                                    <h4><a href="{{  route('site.objecto.form') }}">Registo de Objectos Roubados</a></h4>
-                                    <p>Informe os objectos roubados, dando informações extra acerca da última localização</p>
+                                    <h4><a href="{{ route('site.objecto.form') }}">Registo de Objectos
+                                            Roubados</a></h4>
+                                    <p>Informe os objectos roubados, dando informações extra acerca da última
+                                        localização</p>
                                 </div>
                             </div>
 
                             <div class="col-md-6 d-flex align-items-stretch mt-4" id="services-found-object">
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="300">
                                     <div class="icon"><i class="bx bx-file"></i></div>
-                                    <h4><a href="{{  route('site.objecto.form') }}">Registo de Objectos Achados</a></h4>
-                                    <p>Receba uma recompensa por cada registo de objecto achado e entregue ao seu respectivo dono</p>
+                                    <h4><a href="{{ route('site.objecto.form') }}">Registo de Objectos
+                                            Achados</a></h4>
+                                    <p>Receba uma recompensa por cada registo de objecto achado e entregue ao seu
+                                        respectivo dono</p>
                                 </div>
                             </div>
 
@@ -154,7 +179,8 @@
                                 <div class="icon-box" data-aos="zoom-in" data-aos-delay="400">
                                     <div class="icon"><i class="bx bx-phone-call"></i></div>
                                     <h4><a href="#services">Notificação</a></h4>
-                                    <p>Clientes que pertencem os objectos achados, são notificados automaticamente pelo nosso serviço de notificações.</p>
+                                    <p>Clientes que pertencem os objectos achados, são notificados automaticamente pelo
+                                        nosso serviço de notificações.</p>
                                 </div>
                             </div>
 
@@ -176,29 +202,42 @@
                 <div class="row" data-aos="fade-up" data-aos-delay="100">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active"><a href="{{ route('site.objecto.lista') }}" style="color: #fff">Ver todos</a></li>
+                            <li data-filter="*" class="filter-active"><a
+                                    href="{{ route('site.objecto.lista') }}" style="color: #fff">Ver
+                                    todos</a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="row portfolio-container row-cols-1 row-cols-md-3" data-aos="fade-up" data-aos-delay="200">
 
                     @foreach($listaObjecto as $objecto)
-                        <div class="col-lg-4 col-md-6 portfolio-item filter-{{$objecto['categoria']}}">
-                            <div class="portfolio-wrap">
+                        <div class="col-lg-4 col-md-6 portfolio-item col mb-4">
+                            <div class="portfolio-wrap card h-100">
                                 <img src="{{ url("storage/objectos/". $objecto['fotografia']. "") }}"
-                                    class="img-fluid" alt="">
+                                    class="img-fluid card-img-top" alt="">
                                 <div class="portfolio-info">
-                                    <h4>{{ $objecto['categoria'] }} {{$objecto['id']}}</h4>
+                                    <h4>{{ Str::ucfirst($objecto['estado']) }}</h4>
                                     <p>{{ $objecto['categoria'] }}</p>
                                     <div class="portfolio-links">
                                         <a href="{{ url("storage/objectos/". $objecto['fotografia']. "") }}"
-                                            data-gall="portfolioGallery" class="venobox" title="{{ $objecto['categoria'] }} {{ $objecto['id'] }}"><i
+                                            data-gall="portfolioGallery" class="venobox"
+                                            title="{{ $objecto['categoria'] }} {{ $objecto['id'] }}"><i
                                                 class="bx bx-plus"></i></a>
                                         <a href="{{ route('site.objecto.visualiza', $objecto['id']) }}"
                                             title="Mais Detalhes"><i class="bx bx-link"></i></a>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
+                                <h5 class="card-subtitle">
+                                    {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text obj-achado"
+                                    data-objecto="{{ $objecto['id'] }}"><small><i
+                                            class="bx bx-check"></i> Achei</small></p>
                             </div>
                         </div>
                     @endforeach
@@ -337,15 +376,13 @@
                         <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
                             <div class="row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="Nome" data-rule="minlen:4"
-                                        data-msg="Por favor, entre com pelo menos 4 caracteres" />
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Nome"
+                                        data-rule="minlen:4" data-msg="Por favor, entre com pelo menos 4 caracteres" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Email" data-rule="email"
-                                        data-msg="Por favor, entre com um email válido" />
+                                    <input type="email" class="form-control" name="email" id="email" placeholder="Email"
+                                        data-rule="email" data-msg="Por favor, entre com um email válido" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
@@ -395,10 +432,22 @@
     <script src="{{ url('site/assets/vendor/owl.carousel/owl.carousel.min.js') }}"></script>
     <script src="{{ url('site/assets/vendor/aos/aos.js') }}"></script>
 
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links
+            $(".texte").on('click', function (event) {
+                console.log('você clicou')
+                event.preventDefault();
+                window.location.hash = ''
+            })
+        });
+
+    </script>
+
     <!-- Template Main JS File -->
     <script src="{{ url('site/assets/js/main.js') }}"></script>
     <script>
-                $(document).ready(function () {
+        $(document).ready(function () {
             // Add smooth scrolling to all links
             $("a").on('click', function (event) {
 
@@ -422,6 +471,52 @@
                 } // End if
             });
         });
+
+
+
+        /* CLicar na opção achei*/
+        var numItem = document.getElementsByClassName('obj-achado');
+
+        for (var i = 0; i < numItem.length; i++) {
+            numItem[i].addEventListener('click', function (e) {
+                var IDobjecto = e.target.dataset.objecto
+                var chat = document.getElementById('chat');
+                chat.style.display = "block";
+
+                /* Quando clicado no registar da modal */
+                var formChat = document.getElementById('form-registar-modal');
+                formChat.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    /* Aqui entra o AJAX */
+                })
+
+            })
+        }
+
+        /* CLicar no botao close da modal */
+        var chat = document.getElementById('close-chat');
+        chat.addEventListener('click', function () {
+            var chat = document.getElementById('chat');
+            chat.style.display = "none";
+        });
+
+        /* Apagar o placeholder do textarea */
+        var textareaOBJ = document.querySelector('#descricao-modal');
+        textareaOBJ.addEventListener('click', function (e) {
+            /* Apagar o placeholder*/
+            if (e.target.value == e.target.defaultValue) {
+                e.target.innerHTML = "";
+            }
+        });
+
+        /* Colocar o placeholder se o campo estiver vazio*/
+        textareaOBJ.addEventListener('blur', function (e) {
+            /* Colocar o placeholder se o campo estiver vazio*/
+            if (e.target.value.length == 0) {
+                e.target.innerHTML = "Informação adicional";            }
+        });
+
     </script>
 
 </body>

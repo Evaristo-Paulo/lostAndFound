@@ -9,14 +9,20 @@ use App\Models\Provincia;
 use App\Models\Localizacao;
 use App\Models\TipoObjecto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
     public function index()
     {
+        //$listaObjecto = DB::table('objectos')
+        //->join('tipo_objectos', 'objectos.tipo_objecto_id', '=', 'tipo_objectos.id')
+        //->join('imagems', 'imagems.objecto_id', '=', 'objectos.id')
+        //->orderBy('imagems.id')->paginate(5);
+
         $funcao = new Objecto();
-        $listaObjecto = $funcao->listagem_objectos();
+        $listaObjecto = $funcao->destaque_objectos();
         return view('site.index', compact('listaObjecto'));
     }
 

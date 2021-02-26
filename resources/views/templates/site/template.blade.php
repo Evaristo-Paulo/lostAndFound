@@ -38,6 +38,7 @@
 </head>
 
 <body>
+    @include('site.partials.modal')
 
     <!-- ======= Header ======= -->
     @include('site.partials.navegation')

@@ -12,3 +12,12 @@ Entregues
 Achados
 Perdidos 
 Roubados
+
+
+
+Registo de objecto achado 
+Nome completo
+Telefone
+Informações adicionais
+
+Listagem de objecto

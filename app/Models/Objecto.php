@@ -43,18 +43,66 @@ class Objecto extends Model
 
     public function listagem_objectos()
     {
-        $dados = \DB::select('select obj.id as ID_objecto, tobj.nome as categoria, img.imagem as fotografia from objectos obj, tipo_objectos tobj, imagems img where obj.tipo_objecto_id = tobj.id and img.objecto_id = obj.id  ORDER by img.id');
+        $dados = \DB::select('select obj.id as ID_objecto, tobj.nome as categoria, obj.estado, img.imagem as fotografia, mun.nome as municipio, pr.nome as provincia from objectos obj, tipo_objectos tobj, imagems img, localizacaos lc, municipios mun, provincias pr where obj.tipo_objecto_id = tobj.id and img.objecto_id = obj.id and lc.id = obj.localizacao_id and mun.id = lc.municipio_id and pr.id = mun.provincia_id ORDER by img.id');
 
         $array_principal = array();
 
         foreach ($dados as $dado) {
-            $elem = [
-                'id' => $dado->ID_objecto,
-                'categoria' => strtolower($dado->categoria),
-                'fotografia' => $dado->fotografia
-            ];
-            unset($tipos);
-            Array_push($array_principal, $elem);
+            if ( $dado->estado != 'fechado'){
+                $elem = [
+                    'id' => $dado->ID_objecto,
+                    'categoria' => strtolower($dado->categoria),
+                    'estado' => $dado->estado,
+                    'municipio' => $dado->municipio,
+                    'provincia' => $dado->provincia,
+                    'fotografia' => $dado->fotografia
+                ];
+                Array_push($array_principal, $elem);
+            }
+        }
+
+        $novo = array();
+        $funcao_auxiliar = new Pessoa();
+
+        if (count($array_principal) == 0) {
+            return $novo;
+        }
+
+        do {
+            $primeiroElemento = $array_principal[$funcao_auxiliar->array_key_primeira($array_principal)];
+
+            foreach ($array_principal as $key => $dado) {
+                if ($primeiroElemento != null) {
+                    if ($primeiroElemento['id'] == $dado['id']) {
+                        unset($array_principal[$key]);
+                    }
+                }
+            }
+
+            Array_push($novo, $primeiroElemento);
+        } while (count($array_principal) > 0);
+
+        return $novo;
+    }
+
+    public function destaque_objectos()
+    {
+        $dados = \DB::select('select obj.id as ID_objecto, tobj.nome as categoria, obj.estado, img.imagem as fotografia, mun.nome as municipio, pr.nome as provincia from objectos obj, tipo_objectos tobj, imagems img, localizacaos lc, municipios mun, provincias pr where obj.tipo_objecto_id = tobj.id and img.objecto_id = obj.id and lc.id = obj.localizacao_id and mun.id = lc.municipio_id and pr.id = mun.provincia_id ORDER by img.id');
+
+        $array_principal = array();
+
+        foreach ($dados as $dado) {
+            if ( $dado->estado != 'achado' && $dado->estado != 'fechado'){
+                $elem = [
+                    'id' => $dado->ID_objecto,
+                    'categoria' => strtolower($dado->categoria),
+                    'estado' => $dado->estado,
+                    'municipio' => $dado->municipio,
+                    'provincia' => $dado->provincia,
+                    'fotografia' => $dado->fotografia
+                ];
+                Array_push($array_principal, $elem);
+            }
         }
 
         $novo = array();

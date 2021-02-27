@@ -36,12 +36,10 @@ Registo de objecto
                             </div>
                         @endif
                         @if(session('success'))
-                            <div id="notification-success add-success">
-                                <div class="card add-success-card">
-                                    <div class="add-success-body">
-                                        <div class="card-header">
-                                            <h5>Registo de objecto achado</h5>
-                                        </div>
+                            <div class="page-header" id="notification-success">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <i class="ti-check"></i> {{ session('success') }}
                                     </div>
                                 </div>
                             </div>
@@ -679,13 +677,13 @@ Registo de objecto
 <script>
     setTimeout(() => {
         document.querySelector('#notification-success').style.display = 'none'
-    }, 3000);
+    }, 5000);
     setTimeout(() => {
         document.querySelector('#notification-warning').style.display = 'none'
-    }, 3000);
+    }, 5000);
     setTimeout(() => {
         document.querySelector('#notification-error').style.display = 'none'
-    }, 3000);
+    }, 5000);
 </script>
 
 <script>

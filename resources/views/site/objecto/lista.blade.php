@@ -211,7 +211,7 @@ Lista de objectos
 <script>
     setTimeout(() => {
         document.querySelector('#notification-error').style.display = 'none'
-    }, 3000);
+    }, 5000);
 
     setTimeout(() => {
             document.querySelector('#add-success').style.display = 'none'

@@ -107,17 +107,17 @@
                 <div class="row counters">
 
                     <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                        <span data-toggle="counter-up">521</span>
+                        <span data-toggle="counter-up">{{ $estatistica['extraviado'] }}</span>
                         <p>Extraviados</p>
                     </div>
 
                     <div class="col-lg-4 col-md-6  col-sm-12 text-center">
-                        <span data-toggle="counter-up">1,463</span>
+                        <span data-toggle="counter-up">{{ $estatistica['achado'] }}</span>
                         <p>Achados</p>
                     </div>
 
                     <div class="col-lg-4 col-md-6 col-sm-12 text-center">
-                        <span data-toggle="counter-up">15</span>
+                        <span data-toggle="counter-up">{{ $estatistica['entregue'] }}</span>
                         <p>Entregues</p>
                     </div>
 
@@ -223,13 +223,17 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
-                                <h5 class="card-subtitle">
-                                    {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
+                                <div class="content-found-card">
+                                    <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
+                                    <h5 class="card-subtitle">
+                                        {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
                                     <p class="card-text">{{ $objecto['descricao']  }}</p>
-                                <p class="card-text obj-achado"
+                                </div>
+                                <div class="button-found-card">
+                                    <p class="card-text obj-achado"
                                     data-objecto="{{ $objecto['id'] }}"><small><i
                                             class="bx bx-check"></i> Achei</small></p>
+                                </div>
                             </div>
                         </div>
                     @endforeach
@@ -386,7 +390,7 @@
                             </div>
                             <div class="form-group mt-3">
                                 <textarea class="form-control" name="message" rows="2" data-rule="required"
-                                    data-msg="Por favor, escreva algo para nós" placeholder="Mensagem" maxlength="150"></textarea>
+                                    data-msg="Por favor, escreva algo para nós" placeholder="Mensagem" maxlength="120"></textarea>
                                 <div class="validate"></div>
                             </div>
                             <div class="mb-3">

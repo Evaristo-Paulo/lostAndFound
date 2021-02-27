@@ -7,6 +7,31 @@ use Illuminate\Database\Eloquent\Model;
 class Objecto extends Model
 {
 
+    public function site_estatistica_referente_estado()
+    {
+        $dados = \DB::select('select obj.id, obj.estado from objectos obj');
+
+        $achado = $entregue = $extraviado = 0;
+
+        foreach ($dados as $dado) {
+            if ( $dado->estado == 'achado'){
+                $achado++;
+            }else if ( $dado->estado == 'perdido' || $dado->estado == 'roubado'){
+                $extraviado++;
+            }else{
+                $entregue++;
+            }
+        }
+
+        $elem = [
+            'achado' => $achado,
+            'extraviado' => $extraviado,
+            'entregue' => $entregue,
+        ];
+
+        return $elem;
+    }
+
     public function visualizacao_objectos($id)
     {
         $dados = \DB::select('select obj.id as ID_objecto, tobj.nome as categoria, obj.num_documento as n_documento, obj.descricao as obj_descricao, obj.estado as condicao, img.imagem as fotografia, mun.nome as municipio, loc.bairro from localizacaos loc, municipios mun ,objectos obj, tipo_objectos tobj, imagems img where obj.tipo_objecto_id = tobj.id and img.objecto_id = obj.id and obj.id = ? and obj.localizacao_id = loc.id and mun.id = loc.municipio_id ORDER by img.id', [$id]);

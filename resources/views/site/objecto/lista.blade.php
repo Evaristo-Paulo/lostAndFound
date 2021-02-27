@@ -167,19 +167,23 @@ Lista de objectos
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
-                                        <h5 class="card-subtitle">
-                                            {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
-                                        <p class="card-text">{{ $objecto['descricao']  }}</p>
-                                        @if($objecto['estado'] !=  'achado' && $objecto['estado'] !=  'fechado')
+                                        <div class="content-found-card">
+                                            <h5 class="card-title">{{ Str::ucfirst($objecto['categoria']) }}</h5>
+                                            <h5 class="card-subtitle">
+                                                {{ $objecto['provincia'] }}, {{ $objecto['municipio'] }}</h5>
+                                            <p class="card-text">{{ $objecto['descricao']  }}</p>
+                                        </div>
+                                        <div class="button-found-card">
+                                            @if($objecto['estado'] !=  'achado' && $objecto['estado'] !=  'fechado')
                                             <p class="card-text obj-achado"
                                             data-objecto="{{ $objecto['id'] }}"><small><i
                                                     class="bx bx-check"></i> Achei</small></p>
-                                        @else
-                                            <p class="card-text obj-achado achado-obj"
-                                                data-objecto="{{ $objecto['id'] }}"><small><i
-                                                        class="bx bx-check-double"></i> Achado</small></p>
-                                        @endif
+                                            @else
+                                                <p class="card-text obj-achado achado-obj"
+                                                    data-objecto="{{ $objecto['id'] }}"><small><i
+                                                            class="bx bx-check-double"></i> Achado</small></p>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

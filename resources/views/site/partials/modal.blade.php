@@ -15,7 +15,7 @@
 
                 <div class="form-group">
                     <textarea class="form-control" id="descricao-modal" name="descricao-modal" cols="30" id="descricao-modal"
-                        rows="2"  maxlength="150">Informação adicional</textarea>
+                        rows="2"  maxlength="120">Informação adicional</textarea>
                 </div>
                 <p><small>* Ao clicar em "Registar", confirma que encontrou este objecto.</small></p>
                 <button type="submit" class="btn" >Registar</button>

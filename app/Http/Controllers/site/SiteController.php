@@ -24,7 +24,10 @@ class SiteController extends Controller
 
         $funcao = new Objecto();
         $listaObjecto = $funcao->destaque_objectos();
-        return view('site.index', compact('listaObjecto'));
+
+        $estatistica = $funcao->site_estatistica_referente_estado();
+
+        return view('site.index', compact('listaObjecto', 'estatistica'));
     }
 
     public function form_objecto()

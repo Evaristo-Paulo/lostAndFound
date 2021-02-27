@@ -122,22 +122,7 @@ h6 {
     max-height: 40px;
 }
 
-@media (max-width: 992px) {
-    #header {
-        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-        top: 0;
-        background: #009970;
-    }
 
-    #header.header-scrolled,
-    #header .header-container {
-        background: #009970;
-    }
-
-    #header .logo h1 {
-        font-size: 24px;
-    }
-}
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -783,6 +768,17 @@ section {
     margin-bottom: 30px;
 }
 
+.portfolio .portfolio-item .card-body {
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.button-found-card {
+    margin: 5px 0;
+
+}
 .portfolio #portfolio-flters {
     padding: 0;
     margin: 0 auto 20px auto;
@@ -860,6 +856,7 @@ section {
 .portfolio .portfolio-wrap img {
     transition: all ease-in-out 0.3s;
     width: 80%;
+    height: 300px;
     margin: 0 auto;
 }
 
@@ -1703,7 +1700,7 @@ section {
 .both-side-list {
     display: grid;
     grid-template-areas: 'left-side-filtragem right-side-content';
-    grid-template-columns: .5fr auto;
+    grid-template-columns: .3fr auto;
     border: 1px solid #e4e3e6;
     border-bottom: 0;
 }
@@ -2009,6 +2006,26 @@ input[type="checkbox"]:focus+label::before {
     font-size: 5rem;
     color: #009970
 } 
+@media (max-width: 992px) {
+    #header {
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+        top: 0;
+        background: #009970;
+    }
+
+    #header.header-scrolled,
+    #header .header-container {
+        background: #009970;
+    }
+
+    #header .logo h1 {
+        font-size: 24px;
+    }
+
+    .portfolio .portfolio-item .card-body {
+        height: 300px;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .chat-card{
@@ -2019,4 +2036,11 @@ input[type="checkbox"]:focus+label::before {
         margin-top: 60%;
     }
 
+}
+
+
+@media (max-width: 320px) {
+    .portfolio .portfolio-item .card-body {
+        height: 330px;
+    }
 }

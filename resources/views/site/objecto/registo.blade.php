@@ -124,7 +124,7 @@ Registo de objecto
                                                         <div class="form-group">
                                                             <textarea class="form-control" id="location"
                                                                 name="objDescricao" name="" id="" cols="30"
-                                                                rows="2" maxlength="150"></textarea>
+                                                                rows="2" maxlength="120"></textarea>
                                                             <label for="location"
                                                                 class="wizard-form-text-label">Descrição (opcional)</label>
                                                         </div>
@@ -181,7 +181,7 @@ Registo de objecto
                                                         <div class="form-group">
                                                             <textarea class="form-control" id="location"
                                                                 name="localDescricao" cols="30"
-                                                                rows="2" maxlength="150"></textarea>
+                                                                rows="2" maxlength="120"></textarea>
                                                             <label for="location"
                                                                 class="wizard-form-text-label">Informação adicional (opcional)
                                                             </label>
